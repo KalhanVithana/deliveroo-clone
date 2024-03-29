@@ -1,0 +1,66 @@
+.card {
+    display: flex;
+    border: 1px solid #e0e0e0;
+    
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 45vh;
+  }
+  
+  .image {
+    flex: 0 0 100px; 
+    margin-left:  96px; 
+    margin-top: 80px;
+    margin-bottom: 10px; 
+   
+    .img-prop {
+        height: 250px;
+        width: 250px;;
+    }
+  }
+  
+  %green-theme {
+    color: $green;
+  }
+  .image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .description {
+    flex: 1;
+    padding: 20px;
+    margin-top: 75px;
+
+    .Typography-h1 {
+        font: bold;
+        
+    }
+
+    .Typography-h3 {
+       color:$gray2;
+    }
+
+  }
+  .card-h3-section{
+    display: flex;
+    margin-left: 10px;
+    margin-top: 20px;
+
+    .exclamation-icon{
+        margin-right: 10px;
+    }
+    .arrow {
+        @extend %green-theme;
+    }
+    .star-icon{
+        color: $darkGreen;
+        margin-right: 10px;
+    }
+    .star-icon-txt{
+        color: $darkGreen;
+    }
+  }
+  
+  
