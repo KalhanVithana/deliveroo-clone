@@ -1,0 +1,122 @@
+
+
+
+@mixin adjustInputWidth($width) {
+    .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root {
+      width: $width;
+    }
+  }
+
+.navbar {
+    background-color: $white;
+    height: 75px;
+    border-bottom: 2px solid $gray;
+  
+    .header-items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      .logo-container {
+        display: flex;
+        align-items: center;
+        margin-left: 40px;
+  
+        img {
+          width: 30px;
+          margin-right: 10px;
+        }
+  
+        h1 {
+          margin: 0;
+          font-size: 1.5rem;
+        }
+      }
+  
+      .sm-search {
+        border: 1px solid $gray;
+        color: $gray;
+        display: none;
+  
+        &:hover {
+          background-color: transparent;
+        }
+  
+        svg {
+          fill: $green; // Green color for the icon
+        }
+  
+        @media screen and (max-width: 798px) {
+          display: flex;
+        }
+      }
+  
+      .search-bar {
+        background-color: $gray;
+  
+        .css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root {
+          height: 45px !important;
+          width: 500px;
+        }
+  
+        @media screen and (max-width: 1092px) {
+            @include adjustInputWidth(200px);
+          }
+    
+          @media screen and (max-width: 1102px) {
+            @include adjustInputWidth(150px);
+          }
+  
+          @media screen and (min-width: $small-screen) and (max-width: $medium-screen) {
+            @include adjustInputWidth(300px);
+          }
+        @media screen and (max-width: 918px) {
+            @include adjustInputWidth(150px);
+        }
+  
+        @media screen and (max-width: 898px) {
+            @include adjustInputWidth(150px);
+        }
+  
+        @media screen and (max-width: 808px) {
+          display: none;
+        }
+      }
+  
+      h1 {
+        margin: 0;
+        line-height: 75px;
+        color: $green;
+        margin-left: 5%;
+      }
+  
+      .header-button {
+        list-style: none;
+        float: right;
+        margin-right: 25px;
+        top: 0;
+        line-height: 60px;
+  
+        button {
+          margin-right: 10px;
+        }
+  
+        .outlined-gray {
+          color: $gray;
+          border-color: $gray;
+        }
+  
+        @media screen and (max-width: 660px) {
+          #index-1,
+          #index-2 {
+            display: none;
+          }
+        }
+      }
+    }
+  
+    .btn-tygraphy {
+      color: $black;
+    }
+  }
+  

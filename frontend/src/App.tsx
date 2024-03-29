@@ -1,15 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import './assets/sass/index.scss'
+import Header from './components/header/headerComponent';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        
-      </header>
-    </div>
+    <>
+     
+      <Header/>
+      <h1 className='header-bar'>xx</h1>
+    </>
   );
 }
 
