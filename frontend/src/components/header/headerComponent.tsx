@@ -7,6 +7,10 @@ import InputAdornment from "@mui/material/InputAdornment";
 import { Button, Typography } from "@mui/material";
 import SearchBarComponent from "../common/searchBar/SearchBarComponent";
 import DeliverooIcon from "../../assets/images/deliveroo.svg";
+import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
+import HouseOutlinedIcon from '@mui/icons-material/HouseOutlined';
+import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
+
 
 interface Props {
   placeholder?: string;
@@ -56,16 +60,28 @@ const HeaderComponent: React.FC<Props> = ({
           </div>
           <div className="header-button">
             <Button variant="outlined" className="outlined-gray" id="index-1">
-              <Typography className="btn-tygraphy"> £0.00</Typography>
+            <div className="btn-container">
+            <ShoppingBasketOutlinedIcon className="btn-icn"  style={{marginRight:'5px',height:'20px'}}/>
+        <Typography className="btn-tygraphy"> £0.00</Typography>
+          </div>
+              
             </Button>
             <Button variant="outlined" className="outlined-gray" id="index-2">
-              <Typography className="btn-tygraphy">
+            <div className="btn-container">
+            <HouseOutlinedIcon className="btn-icn"  style={{marginRight:'5px',height:'20px'}}/>
+            <Typography className="btn-tygraphy">
                 {" "}
                 Sign up or log in
               </Typography>
+          </div>
+              
             </Button>
             <Button variant="outlined" className="outlined-gray">
-              <Typography className="btn-tygraphy"> Account</Typography>
+            <div className="btn-container">
+            <Person2OutlinedIcon className="btn-icn"  style={{marginRight:'5px',height:'20px'}}/>
+            <Typography className="btn-tygraphy"> Account</Typography>
+          </div>
+              
             </Button>
           </div>
         </div>

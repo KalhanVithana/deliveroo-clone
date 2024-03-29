@@ -46,7 +46,7 @@
           fill: $green; // Green color for the icon
         }
   
-        @media screen and (max-width: 798px) {
+        @media screen and (max-width: 860px) {
           display: flex;
         }
       }
@@ -70,15 +70,18 @@
           @media screen and (min-width: $small-screen) and (max-width: $medium-screen) {
             @include adjustInputWidth(300px);
           }
-        @media screen and (max-width: 918px) {
-            @include adjustInputWidth(150px);
+
+       
+        @media screen and (max-width: 1112px) {
+            @include adjustInputWidth(250px);
         }
   
-        @media screen and (max-width: 898px) {
+        @media screen and (max-width: 960px) {
             @include adjustInputWidth(150px);
         }
+        
   
-        @media screen and (max-width: 808px) {
+        @media screen and (max-width: 860px) {
           display: none;
         }
       }
@@ -105,8 +108,16 @@
           color: $gray;
           border-color: $gray;
         }
+
+        .btn-container {
+            display: flex;
+
+            .btn-icn {
+                color: $green;
+            }
+          }
   
-        @media screen and (max-width: 660px) {
+        @media screen and (max-width: 860px) {
           #index-1,
           #index-2 {
             display: none;
