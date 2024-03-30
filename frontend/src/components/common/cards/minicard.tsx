@@ -14,7 +14,7 @@ const MiniCardComponent: React.FC<Props> = ({ imageUrl, Icon,type }) => {
   return (
     <div className="card-h3-section">
     <LeftIcon className= {type == 'star' ? 'star-icon' : "exclamation-icon"}/>
-  <div>
+  <div  className="responsive-txt-subtitle-2">
   <Typography variant="subtitle1" className= {type == 'star' ? 'star-icon-txt' : ""} gutterBottom>
     4.7 Excellent
   </Typography>

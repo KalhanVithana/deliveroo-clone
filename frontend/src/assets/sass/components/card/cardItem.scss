@@ -1,66 +1,185 @@
+
+
 .card {
-    display: flex;
-    border: 1px solid #e0e0e0;
-    
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 45vh;
-  }
-  
-  .image {
-    flex: 0 0 100px; 
-    margin-left:  96px; 
-    margin-top: 80px;
-    margin-bottom: 10px; 
-   
-    .img-prop {
-        height: 250px;
-        width: 250px;;
-    }
-  }
-  
-  %green-theme {
-    color: $green;
-  }
-  .image img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  .description {
-    flex: 1;
-    padding: 20px;
-    margin-top: 75px;
+  display: flex;
+  border: 1px solid #e0e0e0;
 
-    .Typography-h1 {
-        font: bold;
-        
-    }
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 45vh;
 
-    .Typography-h3 {
-       color:$gray2;
-    }
+  @media screen and (min-width: 600px) and (max-width: 1396px) {
+    height: 70vh;
 
   }
-  .card-h3-section{
-    display: flex;
-    margin-left: 10px;
+
+  @media screen and (min-width: 600px) and (max-width: 1280px) {
+    height: 100vh;
+
+  }
+
+  @media screen and  (max-width: 599px) {
+   display: contents ;
+   width: fit-content;
+  }
+}
+
+.deliver-change {
+
+  margin-left: 40%;
+
+  @media screen and  (max-width: 599px) {
+    margin-left:0px;
     margin-top: 20px;
-
-    .exclamation-icon{
-        margin-right: 10px;
-    }
-    .arrow {
-        @extend %green-theme;
-    }
-    .star-icon{
-        color: $darkGreen;
-        margin-right: 10px;
-    }
-    .star-icon-txt{
-        color: $darkGreen;
-    }
+   }
+  @media screen and (min-width: $small-screen) and (max-width: 1270px) {
+    margin-left: 0%;
+    margin-top: 20px;
   }
-  
-  
+}
+.image {
+  flex: 0 0 100px;
+  margin-left: 96px;
+  margin-top: 60px;
+  margin-bottom: 10px;
+
+  @media screen and  (max-width: 599px) {
+    margin-left: 0%;
+    margin-top:0%;
+   
+   }
+
+  .img-prop {
+    height: 250px;
+    width: 250px;
+    border-radius: 10px;
+
+    @media screen and  (max-width: 599px) {
+      height: auto ;
+      width: auto ;
+      border-radius: 0%;
+     
+     }
+  }
+}
+
+%green-theme {
+  color: $green;
+}
+
+
+.image img {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  @media screen and (min-width: 200px) and (max-width: 1270px) {
+    height: 425px !important;
+
+  }
+
+  @media screen and (min-width: 200px) and (max-width: 800px) {
+    height: 525px !important;
+
+  }
+}
+
+.description {
+  flex: 1;
+  padding: 16px;
+  margin-top: 60px;
+  display: flex;
+  @media screen and (min-width: $small-screen) and (max-width: 1270px) {
+    display: inline;
+  }
+
+  @media screen and  (max-width: 599px) {
+    display: block;
+    padding: 15px;
+    margin-top: 0px;
+    width: 625px;
+   }
+
+  .Typography-h1 {
+    font-weight: bold;
+  }
+
+  .Typography-h3 {
+    color: $gray2;
+  }
+}
+.card-h3-section {
+  display: flex;
+  margin-left: 10px;
+  margin-top: 20px;
+
+  .exclamation-icon {
+    margin-right: 10px;
+
+    @media screen and  (max-width: 599px) {
+       width: fit-content;
+       height: 56px;
+       color:$gray2;
+     }
+  }
+  .arrow {
+    @extend %green-theme;
+  }
+  .star-icon {
+    color: $darkGreen;
+    margin-right: 10px;
+  }
+  .star-icon-txt {
+    color: $darkGreen;
+  }
+}
+
+.deliver-change-c1 {
+  display: flex;
+  margin-left: 30px;
+
+ 
+  .deliverImg {
+    margin-right: 10px;
+    height: 28px;
+  }
+}
+
+.common-theme {
+  color: $green;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.common-btn-container {
+  display: flex;
+   
+  .btn-icn {
+      color: $green;
+  }
+}
+
+.common-btn-outlined-gray {
+  color: $gray;
+  border-color: $gray !important;
+  margin-top: 10px !important;
+}
+
+.common-btn-tygraphy {
+  color: $black;
+}
+
+.responsive-txt-subtitle-1{
+
+  @media screen and  (max-width: 599px) {
+   margin-right: 240px;
+  }
+}
+
+.responsive-txt-subtitle-2{
+
+  @media screen and  (max-width: 599px) {
+   margin-right: 377px;
+  }
+}
