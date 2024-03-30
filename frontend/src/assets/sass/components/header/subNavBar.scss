@@ -1,0 +1,63 @@
+// Navbar.scss
+
+// Define common styles
+@mixin common-nav-bar-theme {
+    background-color: $green;
+    color: $white;
+    border-radius: 10px;
+    padding: 1px 10px;
+    font-weight: bold;
+  }
+  
+  .sub-navbar {
+    background-color: $white;
+    padding-top: 5px;
+   
+    
+  }
+  
+  .sub-navbar-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and  (max-width: 599px) {
+        margin-left: 88px;
+       
+       }
+
+       @media screen and  (max-width: 570px) {
+        margin-left: 102px;
+       
+       }
+       @media screen and  (max-width: 399px) {
+        margin-left: 331px;
+       
+       }
+  
+    .sub-navbar-item {
+      padding: 10px 20px;
+      color: $green;
+      cursor: pointer;
+      border-radius: 30px;
+  
+      &:hover {
+        @include common-nav-bar-theme;
+      }
+  
+      @media (max-width: 1100px) {
+        &:nth-child(n + 8) {
+          display: none; // Hide items from the 8th onwards on small screens
+        }
+      }
+    }
+  
+    #first-item {
+      @include common-nav-bar-theme;
+    }
+
+    
+  }
+  
