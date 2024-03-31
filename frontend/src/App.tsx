@@ -4,14 +4,13 @@ import Header from './components/header/headerComponent';
 import CardItem from './components/common/cards/cardItem';
 import SubNavBarComponent from './components/header/subNavBar/subNavBarComponent';
 import LandingPage from './containers/landingPage/LandingPage';
+import LoginContainer from './containers/login/loginContainer';
 function App() {
   return (
     <>
-       <div>
-       <LandingPage/>
-       </div>
-  
-     
+        <LandingPage/> 
+       {/* <LoginContainer/> */}
+
       <h1 className='header-bar'>xx</h1>
     </>
   );
