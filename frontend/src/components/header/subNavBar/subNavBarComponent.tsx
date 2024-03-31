@@ -2,8 +2,10 @@
 
 import React, { useState, useRef } from "react";
 
-
-const SubNavBarComponent: React.FC = () => {
+interface SubNavBarComponentProps {
+  isScroller:boolean;
+}
+const SubNavBarComponent: React.FC <SubNavBarComponentProps>= ({isScroller}) => {
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
   const firstItemRef = useRef<HTMLLIElement>(null);
 
@@ -20,7 +22,7 @@ const SubNavBarComponent: React.FC = () => {
   };
 
   return (
-    <nav className="sub-navbar">
+    <nav className="sub-navbar " style={{position:isScroller ? 'fixed' : 'unset',top:isScroller ? '75px':''}}>
       <ul className="sub-navbar-list">
         <li
           ref={firstItemRef}

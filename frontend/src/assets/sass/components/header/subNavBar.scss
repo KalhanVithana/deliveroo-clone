@@ -10,9 +10,17 @@
   }
   
   .sub-navbar {
-    background-color: $white;
-    padding-top: 5px;
-   
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #00000014;
+    box-shadow: 0 2px 4px #0000000d;
+    box-sizing: border-box;
+    display: grid;
+    grid-template: 73px 1fr/100%;
+    position: sticky;
+    width: 100%;
+    z-index: 5;
+    
     
   }
   

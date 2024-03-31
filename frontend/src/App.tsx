@@ -3,14 +3,15 @@ import './assets/sass/index.scss'
 import Header from './components/header/headerComponent';
 import CardItem from './components/common/cards/cardItem';
 import SubNavBarComponent from './components/header/subNavBar/subNavBarComponent';
+import LandingPage from './containers/landingPage/LandingPage';
 function App() {
   return (
     <>
-   
+       <div style={{height:'1000vh'}}>
+       <LandingPage/>
+       </div>
+  
      
-      <Header/>
-      <CardItem imageUrl ={"https://www.foodiesfeed.com/wp-content/uploads/2023/06/burger-with-melted-cheese.jpg"} description={"adasd"}/>
-      <SubNavBarComponent/>
       <h1 className='header-bar'>xx</h1>
     </>
   );
