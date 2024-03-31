@@ -3,6 +3,7 @@ import { FaFacebookF, FaGoogle, FaApple } from "react-icons/fa";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import { Button, TextField, Typography } from "@mui/material";
 import { validationHelper } from "../../utils/validationHelptwr";
+import { useDispatch } from "react-redux";
 
 interface LoginComponentProps {
   handleSubmit: Function;
@@ -15,6 +16,7 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ handleSubmit }) => {
   const [isContinue, setIsContinue] = useState<boolean>(false);
   const [isEnable, setIsEnable] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
+
 
   useEffect(() => {
     console.log("is", isEnable, isContinue);
