@@ -67,7 +67,7 @@
     font-size: 22px  !important;
     line-height: 28px  !important;
     font-weight: 700  !important;
-    margin-right: 226px  !important;
+    margin-right: 236px  !important;
     margin-bottom: 16px  !important;
 }
 
@@ -88,6 +88,17 @@
     height: 52px;
     border: 1px solid #e8ebeb  !important;
     background-color: #fff !important;;
-    color: #00b8a9 !important;;
+    color: $green !important;;
     font-weight: 400 !important;;
+}
+.sign-up-sub1 {
+  // Define your default styles
+  color: black; // Default color
+
+  // Define hover styles
+  &:hover {
+    color: $green; // Change color to blue when hovered
+    cursor: pointer; // Change cursor to pointer on hover
+  }
+
 }

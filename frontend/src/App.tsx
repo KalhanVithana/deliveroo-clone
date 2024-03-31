@@ -15,8 +15,6 @@ function App() {
 <LoginContainer/>
     </Provider>
         {/* <LandingPage/>  */}
-       
-
       <h1 className='header-bar'>xx</h1>
     </>
   );

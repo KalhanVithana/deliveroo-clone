@@ -8,7 +8,7 @@ interface LoginContainerProps {}
 
 const LoginContainer: FC<LoginContainerProps> = () => {
   const dispatch = useDispatch();
-  const handleSubmit = (email: any) => {
+  const handleSubmit = (email: string,password:string) => {
     dispatch(login(email));
   }
     return (<>
