@@ -7,7 +7,7 @@ import LandingPage from './containers/landingPage/LandingPage';
 function App() {
   return (
     <>
-       <div style={{height:'1000vh'}}>
+       <div>
        <LandingPage/>
        </div>
   

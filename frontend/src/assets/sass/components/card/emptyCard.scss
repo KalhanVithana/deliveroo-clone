@@ -1,0 +1,32 @@
+.emptyCard {
+    width: 30%;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 650px;
+    z-index: 10; 
+    margin-right: 200px;
+    
+    
+  }
+  
+  .emptyCardContent {
+    text-align: center;
+  }
+  
+  .shoppingCartIcon {
+    font-size: 48px; /* Set your desired icon size */
+    color: $gray2; /* Set your desired icon color */
+  }
+  
+  .emptyCardText {
+    margin-top: 16px;
+  }
+  
+  .bottomButton {
+    background-color:$gray2 !important;
+    width: 100%;
+    top: 166px;
+
+  }

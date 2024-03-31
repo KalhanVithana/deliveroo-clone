@@ -6,6 +6,7 @@ import FooodItemComponent from "../../components/common/FoodItem/foodItemCompone
 import carImg1 from "../../assets/images/toastImg.jpeg";
 import { Typography } from "@mui/material";
 import FoodList from "../../components/common/cards/foodListComponent";
+import EmptyCardComponent from "../../components/common/cards/emptyCardComponent";
 
 interface LandingPageProps {}
 
@@ -116,14 +117,11 @@ const LandingPage: FC<LandingPageProps> = () => {
           <FoodList initialCards={initialCards} Title={"Create your own"}/>
           <FoodList initialCards={initialCards} Title={"Salads"}/>
         </div>
-        <div>
-          <h2>chg</h2>
-          <h2>chg</h2>
-          <h2>chg</h2>
-
-          <h2>chg</h2>
-        </div>
+        <div style={{ marginBottom: '50px' }}> {/* Adjust the margin bottom as needed */}
+    <EmptyCardComponent />
+  </div>
       </div>
+      <h1>Fooot</h1>
     </>
   );
 };
