@@ -1,0 +1,47 @@
+.foodItemComponent {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 40px;
+  }
+  
+  .foodItemCard {
+    margin-right: 10px;
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .foodItemImage {
+    width: 100%;
+    height: 70%;
+  }
+  
+  .crd-des-p1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: $gray2;
+  }
+  
+  .card-title-1 {
+    font-weight: bold !important;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .cardActions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+  }
+  
+  .cardActions button {
+    width: 80%;
+    height: 100%;
+  }
+  
+

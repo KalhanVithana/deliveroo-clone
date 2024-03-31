@@ -1,0 +1,25 @@
+.main{
+    background-color: red;
+}
+
+.middle-section {
+    background-color: $gray3;
+    display: flex;
+    
+}
+
+.landing-section2-des1 {
+    color: $gray2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.8rem;
+}
+.landing-section2-des2 {
+    font-weight: bold !important;
+}
+
+.landing-section2 {
+    margin-left: 30px;
+    margin-top: 20px;
+}

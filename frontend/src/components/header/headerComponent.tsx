@@ -5,7 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import { Button, Typography } from "@mui/material";
-import SearchBarComponent from "../common/searchBar/SearchBarComponent";
+import SearchBarComponent from "../common/searchBar/searchBarComponent";
 import DeliverooIcon from "../../assets/images/deliveroo.svg";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
