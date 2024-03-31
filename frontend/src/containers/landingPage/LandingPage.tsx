@@ -5,6 +5,7 @@ import CardItem from "../../components/common/cards/cardItem";
 import FooodItemComponent from "../../components/common/FoodItem/foodItemComponent";
 import carImg1 from "../../assets/images/toastImg.jpeg";
 import { Typography } from "@mui/material";
+import FoodList from "../../components/common/cards/foodListComponent";
 
 interface LandingPageProps {}
 
@@ -109,6 +110,11 @@ const LandingPage: FC<LandingPageProps> = () => {
       <div className="middle-section">
         <div style={{ width: 1000 }}>
           <FooodItemComponent initialCards={initialCards} />
+
+          <FoodList initialCards={initialCards} Title={"Platters"}/>
+          <FoodList initialCards={initialCards} Title={"New daily Specials"}/>
+          <FoodList initialCards={initialCards} Title={"Create your own"}/>
+          <FoodList initialCards={initialCards} Title={"Salads"}/>
         </div>
         <div>
           <h2>chg</h2>

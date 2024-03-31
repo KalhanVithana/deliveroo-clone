@@ -1,0 +1,46 @@
+.foodList {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+  }
+  
+  .leftList,
+  .rightList {
+    width: calc(50% - 5px);
+  }
+  
+  .foodItemCard {
+    margin-bottom: 10px;
+    width: 200px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .foodItemImage {
+    width: 100%;
+    height: 70%;
+  }
+  
+  .crd-des-p1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .card-title-1 {
+    font-weight: bold !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .cardActions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cardActions button {
+    width: 80%;
+    height: 100%;
+  }
+  
