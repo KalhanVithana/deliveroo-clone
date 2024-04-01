@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start; 
+    width: 1080px;
   }
   
   .leftList,
@@ -14,15 +15,19 @@
   }
   .foodItemCard {
     margin-bottom: 10px;
-    width: 200px;
-    height: 350px;
+    width: 130px;
+    height: 258px;
     display: flex;
     flex-direction: column;
+
+    .css-46bh2p-MuiCardContent-root {
+      padding: 0px !important;
+  }
   }
   
   .foodItemImage {
     width: 100%;
-    height: 70%;
+    height: 140px;
   }
   
   .crd-des-p1 {
@@ -46,4 +51,10 @@
     width: 80%;
     height: 100%;
   }
-  
+  .foodlist-img-width{
+    width: 168px !important;
+  }
+  .foodList-div-1{
+    background-color: red;
+    width: 300px;
+  }
