@@ -1,4 +1,4 @@
-import { useState, type FC, useEffect } from "react";
+import { useState, FC, useEffect, useMemo } from "react";
 import SubNavBarComponent from "../../components/header/subNavBar/subNavBarComponent";
 import HeaderComponent from "../../components/header/headerComponent";
 import CardItem from "../../components/common/cards/cardItem";
@@ -16,9 +16,8 @@ interface LandingPageProps {}
 const LandingPage: FC<LandingPageProps> = () => {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
   const dispatch = useDispatch();
-  const _FetchData = useSelector((state:any) => state.foodMenu.foodMenu);
-
-
+  const _FetchData = useSelector((state: any) => state.foodMenu.foodMenu);
+  const memoizedFetchData = useMemo(() => _FetchData, [_FetchData]);
   const handleScroll = () => {
     const position = window.scrollY;
     console.log("scroller", position);
@@ -37,11 +36,13 @@ const LandingPage: FC<LandingPageProps> = () => {
     };
   }, []);
 
-  console.log("_FetchData",_FetchData);
+  useEffect(() => {
+    console.log("_FetchData", memoizedFetchData);
+  }, [memoizedFetchData]);
 
   return (
     <>
-     <HeaderComponent />
+      <HeaderComponent />
       <CardItem
         imageUrl={
           "https://www.foodiesfeed.com/wp-content/uploads/2023/06/burger-with-melted-cheese.jpg"
@@ -61,19 +62,50 @@ const LandingPage: FC<LandingPageProps> = () => {
       </div>
 
       <div className="middle-section">
+        {memoizedFetchData && memoizedFetchData.length ? (
+          <div>
+            <FooodItemComponent initialCards={memoizedFetchData[0].foodItems} />
+            <FoodList
+              initialCards={memoizedFetchData[0]._plattersData}
+              Title={"Platters"}
+              size={2}
+            />
+            <FoodList
+              initialCards={memoizedFetchData[0].createYourOwnData}
+              Title={"New daily Specials"}
+              size={3}
+            />
+            <FoodList
+              initialCards={memoizedFetchData[0].saladsData}
+              Title={"Create your own"}
+              size={3}
+            />
+            <FoodList
+              initialCards={memoizedFetchData[0].gymFoodData}
+              Title={"Gym Food"}
+              size={3}
+            />
+            <FoodList
+              initialCards={memoizedFetchData[0].hotPowerBowlsData
+              }
+              Title={"hot Power Bowls"}
+              size={3}
+            />
+            <FoodList
+              initialCards={memoizedFetchData[0].rainbowWrapsData
+              }
+              Title={"rain bow wraps"}
+              size={3}
+            />
+        
+          </div>
+        ): <div style={{ width: 1000 }}> Loading</div>}
 
-      {_FetchData && _FetchData.length &&  <div style={{ width: 1000 }}>
-          <FooodItemComponent initialCards={_FetchData[0].foodItems} />
-
-          <FoodList initialCards={_FetchData[0]._plattersData} Title={"Platters"} size={2}/>
-           <FoodList initialCards={_FetchData[0]._plattersData} Title={"New daily Specials"}  size={3}/>
-          <FoodList initialCards={_FetchData[0]._plattersData} Title={"Create your own"}  size={3}/>
-          <FoodList initialCards={_FetchData[0]._plattersData} Title={"Salads"}  size={3}/> *
-        </div>}
-
-        <div style={{ marginBottom: '50px' }}> {/* Adjust the margin bottom as needed */}
-    <EmptyCardComponent />
-  </div>
+        <div style={{ marginBottom: "50px" }}>
+          {" "}
+          {/* Adjust the margin bottom as needed */}
+          <EmptyCardComponent />
+        </div>
       </div>
       <h1>Fooot</h1>
     </>

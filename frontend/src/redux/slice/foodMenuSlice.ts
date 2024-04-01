@@ -3,7 +3,7 @@ import mockAPI from "../../utils/api";
 
 interface FoodMenuState {
   isLoading: boolean;
-  foodMenu: any[]; // Adjust the array type according to your data structure
+  foodMenu: any[]; 
 }
 
 const initialState: FoodMenuState = {
@@ -11,23 +11,34 @@ const initialState: FoodMenuState = {
   foodMenu: [],
 };
 
-export const fetchMenuData = createAsyncThunk("foodMenu/fetchMenuData", async () => {
-  try {
-    const data = await mockAPI.fetchFoodMenuData();
-    const data2 = await mockAPI.fetchPlattersData();
+export const fetchMenuData = createAsyncThunk(
+  "foodMenu/fetchMenuData",
+  async () => {
+    try {
+      const foodMenuDta = await mockAPI.fetchFoodMenuData();
+      const plattersData = await mockAPI.fetchPlattersData();
+      const createYourOwnData = await mockAPI.fetchCreateyourownData();
+      const gymFoodData = await mockAPI.fetchGymFoodData();
+      const rainbowWrapsData = await mockAPI.fetchRainbowWrapssData();
+      const saladsData = await mockAPI.fetchSaladsData();
+      const hotPowerBowlsData = await mockAPI.fetchHotPowerBowlsData();
 
-    console.log("caa",data,data2);
-    
-    const obj = {
-        foodItems:data,
-        _plattersData:data2
+      const obj = {
+        foodItems: foodMenuDta,
+        _plattersData: plattersData,
+        createYourOwnData: createYourOwnData,
+        gymFoodData: gymFoodData,
+        rainbowWrapsData: rainbowWrapsData,
+        saladsData: saladsData,
+        hotPowerBowlsData: hotPowerBowlsData,
+      };
+
+      return [obj];
+    } catch (error) {
+      throw error;
     }
-
-    return [obj];
-  } catch (error) {
-    throw error;
   }
-});
+);
 
 const foodMenuSlice = createSlice({
   name: "foodMenu",
@@ -42,7 +53,7 @@ const foodMenuSlice = createSlice({
       .addCase(fetchMenuData.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(fetchMenuData.fulfilled, (state, action:any) => {
+      .addCase(fetchMenuData.fulfilled, (state, action: any) => {
         state.isLoading = false;
         state.foodMenu = action.payload;
       })
