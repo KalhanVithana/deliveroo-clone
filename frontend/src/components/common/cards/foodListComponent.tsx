@@ -17,10 +17,10 @@ const FoodListComponent: React.FC<FoodListComponentProps> = ({ initialCards ,Tit
    <div className="foodList">
       <div className="leftList">
         {cards.slice(0, size).map((card, index) => (
-          <Card sx={{ display: 'flex' ,margin:5}}>
+          <Card sx={{ display: 'flex' ,margin:5 ,opacity:card.description === 'Currenty sold out' ? 0.5 :""}}>
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <CardContent sx={{ flex: '1 0 auto' }}>
-              <Typography component="div" variant="h5" className='food-title'>
+              <Typography component="div" variant="subtitle1" className='food-title'>
                {card?.cardName}
               </Typography>
               <Typography variant="subtitle1" color="text.secondary" component="div">
