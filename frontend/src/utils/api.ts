@@ -1,4 +1,4 @@
-import { FoodMenuArr, PlattersArr } from "../constant/food";
+import { FoodMenuArr, GymFoodArr, PlattersArr, SaladsARr, createUrOwnArr } from "../constant/food";
 
 interface PayloadObj {
   cardName: string;
@@ -23,20 +23,20 @@ const mockAPI = {
     return fetchData(PlattersArr);
   },
   fetchCreateyourownData: () => {
-    return fetchData(PlattersArr);
+    return fetchData(createUrOwnArr);
   },
   fetchSaladsData: () => {
-    return fetchData(PlattersArr);
+    return fetchData(SaladsARr);
   },
   fetchGymFoodData: () => {
-    return fetchData(PlattersArr);
+    return fetchData(GymFoodArr);
   },
-  fetchHotPowerBowlsData: () => {
-    return fetchData(PlattersArr);
-  },
-  fetchRainbowWrapssData: () => {
-    return fetchData(PlattersArr);
-  },
+  // fetchHotPowerBowlsData: () => {
+  //   return fetchData(PlattersArr);
+  // },
+  // fetchRainbowWrapssData: () => {
+  //   return fetchData(PlattersArr);
+  // },
 };
 
 export default mockAPI;

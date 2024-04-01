@@ -3,7 +3,7 @@ import mockAPI from "../../utils/api";
 
 interface FoodMenuState {
   isLoading: boolean;
-  foodMenu: any[]; 
+  foodMenu: any[];
 }
 
 const initialState: FoodMenuState = {
@@ -19,18 +19,18 @@ export const fetchMenuData = createAsyncThunk(
       const plattersData = await mockAPI.fetchPlattersData();
       const createYourOwnData = await mockAPI.fetchCreateyourownData();
       const gymFoodData = await mockAPI.fetchGymFoodData();
-      const rainbowWrapsData = await mockAPI.fetchRainbowWrapssData();
+      // const rainbowWrapsData = await mockAPI.fetchRainbowWrapssData();
       const saladsData = await mockAPI.fetchSaladsData();
-      const hotPowerBowlsData = await mockAPI.fetchHotPowerBowlsData();
+      // const hotPowerBowlsData = await mockAPI.fetchHotPowerBowlsData();
 
       const obj = {
         foodItems: foodMenuDta,
         _plattersData: plattersData,
         createYourOwnData: createYourOwnData,
         gymFoodData: gymFoodData,
-        rainbowWrapsData: rainbowWrapsData,
+        // rainbowWrapsData: rainbowWrapsData,
         saladsData: saladsData,
-        hotPowerBowlsData: hotPowerBowlsData,
+        // hotPowerBowlsData: hotPowerBowlsData,
       };
 
       return [obj];
@@ -40,7 +40,7 @@ export const fetchMenuData = createAsyncThunk(
   }
 );
 
-const foodMenuSlice = createSlice({
+const foodMenuSlice :any= createSlice({
   name: "foodMenu",
   initialState,
   reducers: {

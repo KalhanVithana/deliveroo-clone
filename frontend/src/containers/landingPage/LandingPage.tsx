@@ -85,7 +85,7 @@ const LandingPage: FC<LandingPageProps> = () => {
               Title={"Gym Food"}
               size={3}
             />
-            <FoodList
+            {/* <FoodList
               initialCards={memoizedFetchData[0].hotPowerBowlsData
               }
               Title={"hot Power Bowls"}
@@ -96,7 +96,7 @@ const LandingPage: FC<LandingPageProps> = () => {
               }
               Title={"rain bow wraps"}
               size={3}
-            />
+            /> */}
         
           </div>
         ): <div style={{ width: 1000 }}> Loading</div>}
