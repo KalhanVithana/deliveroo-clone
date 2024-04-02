@@ -5,7 +5,7 @@
   justify-content: center;
 
   .login-button {
-    width: 30%;
+    width: 410px;
     border-radius: 4px;
     height: 48px;
     font-size: 16px;
@@ -46,15 +46,26 @@
   .login-email {
     background-color: $green !important;
     color: white;
-    width: 30%;
+    width: 410px;
+    
   }
 }
 
 
 .login-section-1{
-    color: $gray2;
-    margin-top: 30px !important;
-    margin-bottom: 30px !important;
+  color: #ABADAD;
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+  display: flex;
+  align-items: center;
+  width: 22%;
+}
+
+.login-inner-1{
+
+  width: 50% !important;
+  
+  border-bottom: 1px solid #8c9b9b;
 }
 
 .login-section-2{

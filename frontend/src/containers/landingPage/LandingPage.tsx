@@ -18,7 +18,7 @@ const LandingPage: FC<LandingPageProps> = () => {
   const dispatch = useDispatch();
   const _FetchData = useSelector((state: any) => state.foodMenu.foodMenu);
   const memoizedFetchData = useMemo(() => _FetchData, [_FetchData]);
-  const navbarRef = useRef();
+
 
 
   const handleScroll = () => {
@@ -72,7 +72,9 @@ const LandingPage: FC<LandingPageProps> = () => {
               initialCards={memoizedFetchData[0]._plattersData}
               Title={"Platters"}
               size={2}
+             
             />
+            
             <FoodList
               initialCards={memoizedFetchData[0].createYourOwnData}
               Title={"New daily Specials"}

@@ -25,8 +25,9 @@ const LoginContainer: FC<LoginContainerProps> = () => {
   return (
     <>
       <div className="login-container">
+     
         <LoginComponent handleSubmit={handleSubmit} />
-        <FooterComponent /> 
+    
       </div>
     </>
   );

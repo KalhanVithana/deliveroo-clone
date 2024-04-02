@@ -15,6 +15,7 @@ import MainPage from "./containers/MainContainer/MainPage";
 import FooterComponent from "./components/footer/footerComponent";
 import LoginContainer from "./containers/login/loginContainer";
 import PrivateRoutes from "./routes/protectedRoute";
+import { Login } from "@mui/icons-material";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           <Route element={<PrivateRoutes />}>
             <Route path="/main" element={<MainPage />} />
           </Route>
-          <Route path="/login" element={<MainPage />} />
+          <Route path="/" element={<LoginContainer />} />
           {/* <PrivateRoute path="/protected" element={<ProtectedPage />} />  */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

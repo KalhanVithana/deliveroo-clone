@@ -112,7 +112,13 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ handleSubmit }) => {
             <FaApple /> Continue with Apple
           </Button>
 
-          <Typography className="login-section-1"> or</Typography>
+        
+        
+          <div className="login-section-1">
+          <div  className= "login-inner-1"style={{marginRight:'3px', }} />
+           <a>  or</a>
+            <div className= "login-inner-1" style={{marginLeft:'3px'}} />
+          </div>
           <Button className="login-email" onClick={handleRegister}>
             <EmailOutlinedIcon style={{ marginRight: "10px" }} /> Continue with
             Email
