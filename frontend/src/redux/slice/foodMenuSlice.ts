@@ -40,7 +40,7 @@ export const fetchMenuData = createAsyncThunk(
   }
 );
 
-const foodMenuSlice :any= createSlice({
+const foodMenuSlice = createSlice({
   name: "foodMenu",
   initialState,
   reducers: {

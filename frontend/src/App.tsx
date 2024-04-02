@@ -1,30 +1,38 @@
-import React, { useEffect } from 'react';
-import './assets/sass/index.scss'
-import Header from './components/header/headerComponent';
-import CardItem from './components/common/cards/cardItem';
-import SubNavBarComponent from './components/header/subNavBar/subNavBarComponent';
-import LandingPage from './containers/landingPage/LandingPage';
-import LoginContainer from './containers/login/loginContainer';
-import { Provider, useDispatch } from 'react-redux';
+// App.js
+import React from 'react';
+import './assets/sass/index.scss';
+import { BrowserRouter as Router, Routes, Route, Navigate,Outlet } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import store from './redux/store/store';
-import mockAPI from './utils/api';
-import { addFoodMenu } from './redux/slice/foodMenuSlice';
+import Header from './components/header/headerComponent';
 import MainPage from './containers/MainContainer/MainPage';
 import FooterComponent from './components/footer/footerComponent';
+import LoginContainer from './containers/login/loginContainer';
+import PrivateRoutes from './routes/protectedRoute';
+
 function App() {
   return (
-    <>
-
-<Provider store={store}>
-     <MainPage/>
-     <FooterComponent/>
+    <Provider store={store}>
+      <Router>
+        <Header />
+        <Routes>
+         
+          <Route element={<PrivateRoutes />}>
+          <Route path="/" element={<MainPage />} />
+             
+            </Route>
+          <Route path="/login" element={<LoginContainer />} />
+          {/* <PrivateRoute path="/protected" element={<ProtectedPage />} />  */}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+        {/* <FooterComponent /> */}
+      </Router>
     </Provider>
-        {/* <LandingPage/>  */}
-       
-
-      <h1 className='header-bar'>xx</h1>
-    </>
   );
 }
+
+const ProtectedPage = () => {
+  return <h1>Protected Page</h1>;
+};
 
 export default App;

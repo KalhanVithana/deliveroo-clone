@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import mockAPI from "../../utils/api";
 
 interface AuthState {
   isAuthenticated: boolean;
@@ -10,8 +11,27 @@ const initialState: AuthState = {
   userInfo: [],
 };
 
+export const loginAsyncThunk = createAsyncThunk(
+  "authSlice/login",
+  async (userData: any) => {
+    try {
+     
+      
+      const isAuth = await mockAPI.userLogin(userData);
+      console.log("cread",isAuth);
+      if (isAuth) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      throw error;
+    }
+  }
+);
+
 const authSlice = createSlice({
-  name: 'login',
+  name: "login",
   initialState,
   reducers: {
     login(state, action: PayloadAction<any>) {
@@ -22,6 +42,21 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
       state.userInfo = [];
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(loginAsyncThunk.pending, (state) => {
+        state.isAuthenticated = true;
+      })
+      .addCase(loginAsyncThunk.fulfilled, (state, action: any) => {
+
+         console.log("addCase login",action,state);
+         
+         return {...state ,isAuthenticated :action.payload}
+      })
+      .addCase(loginAsyncThunk.rejected, (state) => {
+        state.isAuthenticated = false;
+      });
   },
 });
 

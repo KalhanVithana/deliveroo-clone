@@ -93,7 +93,7 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ handleSubmit }) => {
               fontWeight: "bold",
             }}
             onClick={() => {
-              handleSubmit(email);
+              handleSubmit(email,password);
             }}
           >
             Continue

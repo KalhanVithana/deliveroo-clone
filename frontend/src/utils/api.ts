@@ -1,4 +1,5 @@
 import { FoodMenuArr, GymFoodArr, PlattersArr, SaladsARr, createUrOwnArr } from "../constant/food";
+import { userInfoArr } from "../constant/user";
 
 interface PayloadObj {
   cardName: string;
@@ -6,12 +7,39 @@ interface PayloadObj {
   price: string;
   imageUrl: string;
 }
+interface PayloadUserObj {
+  email: string;
+  password: string;
+}
 
 const fetchData = (dataArr: PayloadObj[], delay = 1000) => {
   return new Promise<PayloadObj[]>((resolve) => {
     setTimeout(() => {
       resolve(dataArr);
     }, delay);
+  });
+};
+
+const userAuth = (userData:any) => {
+  return new Promise<any>((resolve) => {
+    userInfoArr.filter((item:any) => {
+      return item.email === userData.email;
+    }).find((item => item))
+    console.log(userData,userInfoArr);
+    
+    const isAuth = userInfoArr.filter((item:any) => {
+      console.log(item.email ,userData.email);
+      
+      return item.email === userData.email;
+    }).some((user:any) => {
+       console.log(user.password , userData.password);
+      return user.password === userData.password
+    });
+     if(isAuth){
+      resolve(isAuth)
+     }else {
+      resolve(isAuth)
+     }
   });
 };
 
@@ -31,9 +59,11 @@ const mockAPI = {
   fetchGymFoodData: () => {
     return fetchData(GymFoodArr);
   },
-  // fetchHotPowerBowlsData: () => {
-  //   return fetchData(PlattersArr);
-  // },
+  
+  userLogin: (userData: PayloadUserObj) => {
+    return userAuth(userData);
+  }
+
   // fetchRainbowWrapssData: () => {
   //   return fetchData(PlattersArr);
   // },
