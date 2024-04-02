@@ -1,4 +1,4 @@
-import { useState, FC, useEffect, useMemo } from "react";
+import { useState, FC, useEffect, useMemo, useRef } from "react";
 import SubNavBarComponent from "../../components/header/subNavBar/subNavBarComponent";
 import HeaderComponent from "../../components/header/headerComponent";
 import CardItem from "../../components/common/cards/cardItem";
@@ -18,6 +18,9 @@ const LandingPage: FC<LandingPageProps> = () => {
   const dispatch = useDispatch();
   const _FetchData = useSelector((state: any) => state.foodMenu.foodMenu);
   const memoizedFetchData = useMemo(() => _FetchData, [_FetchData]);
+  const navbarRef = useRef();
+
+
   const handleScroll = () => {
     const position = window.scrollY;
     console.log("scroller", position);
@@ -42,7 +45,7 @@ const LandingPage: FC<LandingPageProps> = () => {
 
   return (
     <>
-      <HeaderComponent />
+      
       <CardItem
         imageUrl={
           "https://www.foodiesfeed.com/wp-content/uploads/2023/06/burger-with-melted-cheese.jpg"

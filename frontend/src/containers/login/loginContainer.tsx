@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login, loginAsyncThunk } from "../../redux/slice/loginSlice";
 import { AppDispatch } from "../../redux/store/store";
 import { useNavigate } from "react-router-dom";
+import FooterComponent from "../../components/footer/footerComponent";
 
 interface LoginContainerProps {}
 
@@ -25,6 +26,7 @@ const LoginContainer: FC<LoginContainerProps> = () => {
     <>
       <div className="login-container">
         <LoginComponent handleSubmit={handleSubmit} />
+        <FooterComponent /> 
       </div>
     </>
   );

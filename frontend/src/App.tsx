@@ -29,7 +29,7 @@ function App() {
           {/* <PrivateRoute path="/protected" element={<ProtectedPage />} />  */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-        <FooterComponent /> 
+        <FooterComponent/>
       </Router>
     </Provider>
   );
