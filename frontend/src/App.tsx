@@ -25,11 +25,11 @@ function App() {
           <Route element={<PrivateRoutes />}>
             <Route path="/main" element={<MainPage />} />
           </Route>
-          <Route path="/login" element={<LoginContainer />} />
+          <Route path="/login" element={<MainPage />} />
           {/* <PrivateRoute path="/protected" element={<ProtectedPage />} />  */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-        {/* <FooterComponent /> */}
+        <FooterComponent /> 
       </Router>
     </Provider>
   );

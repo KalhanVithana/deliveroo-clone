@@ -1,18 +1,24 @@
 .emptyCard {
-    width: 30%;
-    height: 300px;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 650px;
-    z-index: 10; 
-    margin-right: 200px;
+    width: 100%;
+    height: 100vh;
+    margin-left: 64px;
+    margin-right: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     
     
   }
   
+  .emptyCard-div {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .emptyCardContent {
     text-align: center;
+  
   }
   
   .shoppingCartIcon {
@@ -27,6 +33,6 @@
   .bottomButton {
     background-color:$gray2 !important;
     width: 100%;
-    top: 166px;
+    
 
   }

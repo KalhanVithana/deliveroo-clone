@@ -54,10 +54,11 @@ const FoodListComponent: React.FC<FoodListComponentProps> = ({ initialCards ,Tit
       </div>
       <div className="rightList">
         {cards.slice(size).map((card, index) => (
-          <Card className="foodList-card" sx={{ display: 'flex' ,margin:5}}>
-          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+          <Card className="foodList-card" sx={{ display: 'flex' ,margin:5 ,opacity:card.description === 'Currenty sold out' ? 0.5 :""}}>
+          <div className='foodList-div-1'>
+          <Box sx={{ display: 'flex', flexDirection: 'column' }} >
             <CardContent sx={{ flex: '1 0 auto' }}>
-           <Typography component="div" variant="subtitle1" className='food-title'>
+              <Typography component="div" variant="subtitle1" className='food-title'>
                {card?.cardName}
               </Typography>
               <Typography variant="subtitle1" color="text.secondary" component="div">
@@ -71,13 +72,15 @@ const FoodListComponent: React.FC<FoodListComponentProps> = ({ initialCards ,Tit
             
             </Box>
           </Box>
+          </div>
           <CardMedia
             component="img"
             sx={{ width: 151 }}
             image={card.imageUrl}
             alt="Live from space album cover"
+            className='foodlist-img-width'
           />
-           <CardActions className="oodlist-cardActions">
+          <CardActions className="foodlist-cardActions">
             <IconButton>
               <AddIcon />
             </IconButton>

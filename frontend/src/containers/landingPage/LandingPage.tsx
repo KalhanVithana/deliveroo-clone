@@ -101,13 +101,12 @@ const LandingPage: FC<LandingPageProps> = () => {
           </div>
         ): <div style={{ width: 1000 }}> Loading</div>}
 
+<EmptyCardComponent />
         <div style={{ marginBottom: "50px" }}>
           {" "}
-          {/* Adjust the margin bottom as needed */}
-          <EmptyCardComponent />
         </div>
       </div>
-      <h1>Fooot</h1>
+
     </>
   );
 };
