@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchMenuData } from "../../redux/slice/foodMenuSlice";
 import LandingPage from "../landingPage/LandingPage";
 import { AppDispatch } from "../../redux/store/store";
+import { Outlet } from "react-router-dom";
 
 interface MainPageProps {}
 
@@ -19,6 +20,7 @@ const MainPage: FC<MainPageProps> = () => {
   return (
     <>
       <LandingPage />
+     
     </>
   );
 };
