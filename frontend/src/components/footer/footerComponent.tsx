@@ -3,7 +3,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import appStoreImg from '../../assets/images/app-store-badge.png'
+import appStoreImg from '../../assets/images/item.png'
 import playstoreImg from '../../assets/images/images1.jpeg'
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -93,7 +93,7 @@ const FooterComponent = () => {
                     {
                 index === 3 && <>
            
-             <img src={appStoreImg} style={{height:128,width:138}}/>
+             <img src={appStoreImg} style={{marginTop:10,width:138}}/>
                 <img src={playstoreImg}style={{height:40,width:138}}/>
             
                 </>
