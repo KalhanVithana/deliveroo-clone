@@ -12,14 +12,14 @@ const useStyles = makeStyles((theme) => ({
   },
   cardContainer: {
     display: 'flex',
-    justifyContent: 'center', // Center align the cards horizontally
+    justifyContent: 'center',
   },
   card: {
     backgroundColor: '#424748',
     marginBottom: theme.spacing(2),
     marginRight: '10px',
-    width: '250px', // Set fixed width for each card
-    height: '400px', // Set fixed height for each card
+    width: '250px', 
+    height: '400px', 
   },
   link: {
     textDecoration: 'none',
@@ -31,15 +31,15 @@ const useStyles = makeStyles((theme) => ({
     margin: 0,
   },
   listItem: {
-    marginBottom: '4px', // Add margin bottom to each list item
-    fontWeight: 'bold', // Make the first list item bold
+    marginBottom: '4px', 
+    fontWeight: 'bold', 
+    fontSize:'large',
+    fontFamily:'plex-sans,sans-serif'
   },
 }));
 
 const FooterComponent = () => {
   const classes = useStyles();
-
-  // Array containing data for each card
   const cards = [
     [
       "Discover Deliveroo",
@@ -74,16 +74,13 @@ const FooterComponent = () => {
       "Brands"
     ],
     [
-      "Another Card 4 Link 1",
-      "Another Card 4 Link 2",
-      "Another Card 4 Link 3",
-      "Another Card 4 Link 4"
+      "Take Deliveroo with you",
     ]
   ];
 
   return (
     <footer className={classes.footer}>
-      <div className={classes.cardContainer}> {/* Container for all cards */}
+      <div className={classes.cardContainer}> 
         {cards.map((cardContent, index) => (
           <Card className={classes.card} key={index}>
             <CardContent>
