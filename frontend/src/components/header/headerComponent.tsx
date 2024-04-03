@@ -43,14 +43,13 @@ const HeaderComponent: React.FC<Props> = ({
               <SearchIcon />
             </IconButton>
             <Drawer
-              anchor="right" // Position the drawer on the right side
+              anchor="right" 
               open={isDrawerOpen}
               onClose={toggleDrawer}
             >
               <div style={{ width: "250px", padding: "20px" }}>
                 <Typography variant="h6">Account</Typography>
-                {/* Add account-related content inside the drawer */}
-                {/* For example: Profile, Orders, Settings, etc. */}
+        
               </div>
             </Drawer>
             <SearchBarComponent />

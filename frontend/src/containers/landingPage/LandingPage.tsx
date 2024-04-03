@@ -19,8 +19,6 @@ const LandingPage: FC<LandingPageProps> = () => {
   const _FetchData = useSelector((state: any) => state.foodMenu.foodMenu);
   const memoizedFetchData = useMemo(() => _FetchData, [_FetchData]);
 
-
-
   const handleScroll = () => {
     const position = window.scrollY;
     console.log("scroller", position);
@@ -45,14 +43,13 @@ const LandingPage: FC<LandingPageProps> = () => {
 
   return (
     <>
-      
       <CardItem
         imageUrl={
           "https://www.foodiesfeed.com/wp-content/uploads/2023/06/burger-with-melted-cheese.jpg"
         }
         description={"adasd"}
       />
-      <SubNavBarComponent isScroller={scrollPosition > 400 ? true : false} />
+      <SubNavBarComponent isScroller={scrollPosition > 400 ? true : false} scrollPosition ={scrollPosition} />
 
       <div className="landing-section2">
         <Typography className="landing-section2-des1">
@@ -72,9 +69,8 @@ const LandingPage: FC<LandingPageProps> = () => {
               initialCards={memoizedFetchData[0]._plattersData}
               Title={"Platters"}
               size={2}
-             
             />
-            
+
             <FoodList
               initialCards={memoizedFetchData[0].createYourOwnData}
               Title={"New daily Specials"}
@@ -102,16 +98,14 @@ const LandingPage: FC<LandingPageProps> = () => {
               Title={"rain bow wraps"}
               size={3}
             /> */}
-        
           </div>
-        ): <div style={{ width: 1000 }}> Loading</div>}
+        ) : (
+          <div style={{ width: 1000 }}> Loading</div>
+        )}
 
-<EmptyCardComponent />
-        <div style={{ marginBottom: "50px" }}>
-          {" "}
-        </div>
+        <EmptyCardComponent />
+        <div style={{ marginBottom: "50px" }}> </div>
       </div>
-
     </>
   );
 };

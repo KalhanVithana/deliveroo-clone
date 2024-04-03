@@ -26,7 +26,7 @@ function App() {
           <Route element={<PrivateRoutes />}>
             <Route path="/main" element={<MainPage />} />
           </Route>
-          <Route path="/" element={<LoginContainer />} />
+          <Route path="/" element={<MainPage />} />
           {/* <PrivateRoute path="/protected" element={<ProtectedPage />} />  */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
