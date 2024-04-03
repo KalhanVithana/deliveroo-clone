@@ -1,43 +1,48 @@
-// App.js
-import React from "react";
+import React, { Suspense, useState } from "react";
 import "./assets/sass/index.scss";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-  Outlet,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store/store";
 import Header from "./components/header/headerComponent";
-import MainPage from "./containers/MainContainer/MainPage";
 import FooterComponent from "./components/footer/footerComponent";
-import LoginContainer from "./containers/login/loginContainer";
-import PrivateRoutes from "./routes/protectedRoute";
-import { Login } from "@mui/icons-material";
+import { CircularProgress } from "@mui/material";
+
+const MainPage = React.lazy(() => import("./containers/MainContainer/MainPage"));
+const LoginContainer = React.lazy(() => import("./containers/login/loginContainer"));
+const PrivateRoutes = React.lazy(() => import("./routes/protectedRoute"));
 
 function App() {
+  const [mainContentReady, setMainContentReady] = useState(false);
+
   return (
     <Provider store={store}>
       <Router>
         <Header />
-        <Routes>
-          <Route element={<PrivateRoutes />}>
-            <Route path="/main" element={<MainPage />} />
-          </Route>
-          <Route path="/" element={<MainPage />} />
-          {/* <PrivateRoute path="/protected" element={<ProtectedPage />} />  */}
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-        <FooterComponent/>
+        <Suspense fallback={<CircularProgress />}>
+          <Routes>
+            <Route
+              path="/main"
+              element={
+                <Suspense fallback={<CircularProgress />}>
+                  <PrivateRoutes />
+                  <MainPage onLoad={() => setMainContentReady(true)} />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/"
+              element={
+                <Suspense fallback={<CircularProgress />}>
+                  <LoginContainer onLoad={() => setMainContentReady(true)} />
+                </Suspense>
+              }
+            />
+          </Routes>
+        </Suspense>
+        {mainContentReady && <FooterComponent />}
       </Router>
     </Provider>
   );
 }
-
-const ProtectedPage = () => {
-  return <h1>Protected Page</h1>;
-};
 
 export default App;

@@ -7,9 +7,11 @@ import { AppDispatch } from "../../redux/store/store";
 import { useNavigate } from "react-router-dom";
 import FooterComponent from "../../components/footer/footerComponent";
 
-interface LoginContainerProps {}
+interface LoginContainerProps {
+  onLoad?: () => void;
+}
 
-const LoginContainer: FC<LoginContainerProps> = () => {
+const LoginContainer: FC<LoginContainerProps> = ({ onLoad}) => {
   const dispatch = useDispatch<AppDispatch>();
   const isAuth = useSelector((state: any) => state.auth.isAuthenticated);
   const navigate = useNavigate();
@@ -17,9 +19,16 @@ const LoginContainer: FC<LoginContainerProps> = () => {
     console.log("click");
     dispatch(loginAsyncThunk({ email, password }));
   };
-  useEffect(() => {
-    console.log("isAuth", isAuth);
 
+  useEffect(() => {
+    if (onLoad) {
+      onLoad();
+    }
+  }, []);
+  useEffect(() => {
+   
+    console.log("isAuth", isAuth);
+ 
     isAuth && navigate("/main");
   }, [isAuth]);
   return (

@@ -16,6 +16,7 @@ interface Props {
   onChange?: (value: string) => void;
 }
 
+
 const HeaderComponent: React.FC<Props> = ({
   placeholder = "Search",
   onChange,
@@ -75,7 +76,10 @@ const HeaderComponent: React.FC<Props> = ({
               id="index-2"
               
             >
-              <div className="btn-container">
+              <div className="btn-container" onClick={()=> {
+                
+                window.location.href = '/';
+              }}>
                 <HouseOutlinedIcon
                   className="btn-icn"
                   style={{ marginRight: "5px", height: "20px" }}

@@ -75,7 +75,7 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ handleSubmit }) => {
             className="email-input"
             onChange={handleInputChange}
           />
-          {isSignUP && (
+       
             <TextField
               label="Password"
               name="password"
@@ -83,7 +83,7 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ handleSubmit }) => {
               onChange={handleInputChange}
               style={{ marginTop: 10 }}
             />
-          )}
+          
           <Button
             className="continue-btn"
             disabled={!isEnable}

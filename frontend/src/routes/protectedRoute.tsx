@@ -5,7 +5,7 @@ import { Outlet, Navigate } from 'react-router-dom';
 const PrivateRoutes: React.FC = () => {
     const isAuth = useSelector((state: any) => state.auth.isAuthenticated);
     return (
-        isAuth ? <Outlet /> : <Navigate to="/login" replace />
+        isAuth ? <Outlet /> : <Navigate to="/" replace />
     );
 };
 
