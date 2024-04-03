@@ -13,7 +13,13 @@ const FoodListComponent: React.FC<FoodListComponentProps> = ({ initialCards ,Tit
 
   return (
    <>
-   <h1 style={{marginLeft:50}}>{Title}</h1>
+     <Typography
+              className="landing-section2-des3"
+              variant="h6"
+              gutterBottom
+            >
+              {Title}
+            </Typography>
    <div className="foodList">
       <div className="leftList">
         {cards.slice(0, size).map((card, index) => (
