@@ -3,7 +3,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-
+import appStoreImg from '../../assets/images/app-store-badge.png'
+import playstoreImg from '../../assets/images/images1.jpeg'
 const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: '#2E3333',
@@ -75,6 +76,7 @@ const FooterComponent = () => {
     ],
     [
       "Take Deliveroo with you",
+    
     ]
   ];
 
@@ -88,6 +90,14 @@ const FooterComponent = () => {
                 {cardContent.map((link, linkIndex) => (
                   <li key={linkIndex} style={{marginBottom:10}} className={linkIndex === 0 ? classes.listItem : ''}>
                     <a href="#" className={classes.link}>{link}</a>
+                    {
+                index === 3 && <>
+           
+             <img src={appStoreImg} style={{height:128,width:138}}/>
+                <img src={playstoreImg}style={{height:40,width:138}}/>
+            
+                </>
+               } 
                   </li>
                 ))}
               </ul>
