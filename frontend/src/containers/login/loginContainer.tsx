@@ -11,7 +11,7 @@ interface LoginContainerProps {
   onLoad?: () => void;
 }
 
-const LoginContainer: FC<LoginContainerProps> = ({ onLoad}) => {
+const LoginContainer: FC<LoginContainerProps> = ({ onLoad }) => {
   const dispatch = useDispatch<AppDispatch>();
   const isAuth = useSelector((state: any) => state.auth.isAuthenticated);
   const navigate = useNavigate();
@@ -26,17 +26,14 @@ const LoginContainer: FC<LoginContainerProps> = ({ onLoad}) => {
     }
   }, []);
   useEffect(() => {
-   
     console.log("isAuth", isAuth);
- 
+
     isAuth && navigate("/main");
   }, [isAuth]);
   return (
     <>
       <div className="login-container">
-     
         <LoginComponent handleSubmit={handleSubmit} />
-    
       </div>
     </>
   );

@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#424748',
     marginBottom: theme.spacing(2),
     marginRight: '10px',
-    width: '250px', 
-    height: '400px', 
+    width: '250px',
+    height: '400px',
   },
   link: {
     textDecoration: 'none',
@@ -32,10 +32,10 @@ const useStyles = makeStyles((theme) => ({
     margin: 0,
   },
   listItem: {
-    marginBottom: '4px', 
-    fontWeight: 'bold', 
-    fontSize:'large',
-    fontFamily:'plex-sans,sans-serif'
+    marginBottom: '4px',
+    fontWeight: 'bold',
+    fontSize: 'large',
+    fontFamily: 'plex-sans,sans-serif'
   },
 }));
 
@@ -76,28 +76,28 @@ const FooterComponent = () => {
     ],
     [
       "Take Deliveroo with you",
-    
+
     ]
   ];
 
   return (
     <footer className={classes.footer}>
-      <div className={classes.cardContainer}> 
+      <div className={classes.cardContainer}>
         {cards.map((cardContent, index) => (
           <Card className={classes.card} key={index}>
             <CardContent>
               <ul className={classes.list}>
                 {cardContent.map((link, linkIndex) => (
-                  <li key={linkIndex} style={{marginBottom:10}} className={linkIndex === 0 ? classes.listItem : ''}>
+                  <li key={linkIndex} style={{ marginBottom: 10 }} className={linkIndex === 0 ? classes.listItem : ''}>
                     <a href="#" className={classes.link}>{link}</a>
                     {
-                index === 3 && <>
-           
-             <img src={appStoreImg} style={{marginTop:10,width:138}}/>
-                <img src={playstoreImg}style={{height:40,width:138}}/>
-            
-                </>
-               } 
+                      index === 3 && <>
+
+                        <img src={appStoreImg} style={{ marginTop: 10, width: 138 }} />
+                        <img src={playstoreImg} style={{ height: 40, width: 138 }} />
+
+                      </>
+                    }
                   </li>
                 ))}
               </ul>

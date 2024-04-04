@@ -16,7 +16,6 @@ interface Props {
   onChange?: (value: string) => void;
 }
 
-
 const HeaderComponent: React.FC<Props> = ({
   placeholder = "Search",
   onChange,
@@ -43,25 +42,15 @@ const HeaderComponent: React.FC<Props> = ({
             <IconButton onClick={toggleDrawer} className="sm-search">
               <SearchIcon />
             </IconButton>
-            <Drawer
-              anchor="right" 
-              open={isDrawerOpen}
-              onClose={toggleDrawer}
-            >
+            <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer}>
               <div style={{ width: "250px", padding: "20px" }}>
                 <Typography variant="h6">Account</Typography>
-        
               </div>
             </Drawer>
             <SearchBarComponent />
           </div>
           <div className="header-button">
-            <Button
-              variant="outlined"
-              className="outlined-gray"
-              id="index-1"
-           
-            >
+            <Button variant="outlined" className="outlined-gray" id="index-1">
               <div className="btn-container">
                 <ShoppingBasketOutlinedIcon
                   className="btn-icn"
@@ -70,16 +59,13 @@ const HeaderComponent: React.FC<Props> = ({
                 <Typography className="btn-tygraphy"> £0.00</Typography>
               </div>
             </Button>
-            <Button
-              variant="outlined"
-              className="outlined-gray"
-              id="index-2"
-              
-            >
-              <div className="btn-container" onClick={()=> {
-                
-                window.location.href = '/';
-              }}>
+            <Button variant="outlined" className="outlined-gray" id="index-2">
+              <div
+                className="btn-container"
+                onClick={() => {
+                  window.location.href = "/";
+                }}
+              >
                 <HouseOutlinedIcon
                   className="btn-icn"
                   style={{ marginRight: "5px", height: "20px" }}

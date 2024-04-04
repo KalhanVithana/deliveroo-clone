@@ -15,10 +15,8 @@ export const loginAsyncThunk = createAsyncThunk(
   "authSlice/login",
   async (userData: any) => {
     try {
-     
-      
       const isAuth = await mockAPI.userLogin(userData);
-      console.log("cread",isAuth);
+      console.log("cread", isAuth);
       if (isAuth) {
         return true;
       } else {
@@ -49,10 +47,9 @@ const authSlice = createSlice({
         state.isAuthenticated = true;
       })
       .addCase(loginAsyncThunk.fulfilled, (state, action: any) => {
+        console.log("addCase login", action, state);
 
-         console.log("addCase login",action,state);
-         
-         return {...state ,isAuthenticated :action.payload}
+        return { ...state, isAuthenticated: action.payload };
       })
       .addCase(loginAsyncThunk.rejected, (state) => {
         state.isAuthenticated = false;

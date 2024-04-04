@@ -53,17 +53,23 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ handleSubmit }) => {
   return (
     <div className="login-component">
       <Typography variant="h3" className="sign-up">
-        <a className="sign-up-sub1" onClick={() => {
-          setIsSignUp(true)
-          setIsEnable(false)
-        }}>
+        <a
+          className="sign-up-sub1"
+          onClick={() => {
+            setIsSignUp(true);
+            setIsEnable(false);
+          }}
+        >
           Sign up
         </a>{" "}
         or{" "}
-        <a className="sign-up-sub1" onClick={() =>{
-          setIsSignUp(false)
-          setIsEnable(false)
-        }}>
+        <a
+          className="sign-up-sub1"
+          onClick={() => {
+            setIsSignUp(false);
+            setIsEnable(false);
+          }}
+        >
           log in{" "}
         </a>
       </Typography>
@@ -75,15 +81,15 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ handleSubmit }) => {
             className="email-input"
             onChange={handleInputChange}
           />
-       
-            <TextField
-              label="Password"
-              name="password"
-              className="email-input"
-              onChange={handleInputChange}
-              style={{ marginTop: 10 }}
-            />
-          
+
+          <TextField
+            label="Password"
+            name="password"
+            className="email-input"
+            onChange={handleInputChange}
+            style={{ marginTop: 10 }}
+          />
+
           <Button
             className="continue-btn"
             disabled={!isEnable}
@@ -93,7 +99,7 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ handleSubmit }) => {
               fontWeight: "bold",
             }}
             onClick={() => {
-              handleSubmit(email,password);
+              handleSubmit(email, password);
             }}
           >
             Continue
@@ -112,12 +118,10 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ handleSubmit }) => {
             <FaApple /> Continue with Apple
           </Button>
 
-        
-        
           <div className="login-section-1">
-          <div  className= "login-inner-1"style={{marginRight:'3px', }} />
-           <a>  or</a>
-            <div className= "login-inner-1" style={{marginLeft:'3px'}} />
+            <div className="login-inner-1" style={{ marginRight: "3px" }} />
+            <a> or</a>
+            <div className="login-inner-1" style={{ marginLeft: "3px" }} />
           </div>
           <Button className="login-email" onClick={handleRegister}>
             <EmailOutlinedIcon style={{ marginRight: "10px" }} /> Continue with
